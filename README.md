@@ -35,7 +35,7 @@ async def on_message(message):
         return
 
     if message.content == "please test sembed":
-        e = sembed.SEmbed("Did you know that", "This embed is made by sembed!")
+        e = sembed.SEmbed("Did you know that:", "This embed is made by sembed!")
         await message.channel.send(embed=e)
 
 client.run('your token here')

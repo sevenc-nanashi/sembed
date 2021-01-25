@@ -10,7 +10,7 @@ def _requires_from_file(filename):
 
 setuptools.setup(
     name="sembed",
-    version="1.0.1",
+    version="1.0.2",
     author="sevenc_nanashi",
     description="A wrapper of discord.Embed.",
     long_description=long_desc,
