@@ -121,7 +121,7 @@ class SEmbed(discord.Embed):
         return self._raw_timestamp
     
     @timestamp.setter
-    def timestamp_setter(self, val: datetime.datetime):
+    def timestamp(self, val: datetime.datetime):
         self._raw_timestamp = val
     
     @property
@@ -129,7 +129,7 @@ class SEmbed(discord.Embed):
         return self._raw_url
     
     @url.setter
-    def url_setter(self, val: Optional[str]):
+    def url(self, val: Optional[str]):
         self._raw_url = val
 
     @property
@@ -137,7 +137,7 @@ class SEmbed(discord.Embed):
         return self._raw_author
     
     @author.setter
-    def author_setter(self, val: Optional[SAuthor]):
+    def author(self, val: Optional[SAuthor]):
         self._raw_author = val
 
     @property
@@ -145,7 +145,7 @@ class SEmbed(discord.Embed):
         return self._raw_footer
     
     @footer.setter
-    def footer_setter(self, val: Optional[SFooter]):
+    def footerNone(self, val: Optional[SFooter]):
         self._raw_footer = val
 
     @property
@@ -159,14 +159,14 @@ class SEmbed(discord.Embed):
     @property
     def _author(self):
         if self.author:
-            return {"name": (self.author.name or discord.Embed.Empty), "icon_url": (self.author.icon_url or discord.Embed.Empty), "url": (self.author.url or discord.Embed.Empty)}
+            return {"name": self.author.name, "icon_url": self.author.icon_url or None, "url": self.author.url or None}
         else:
             raise AttributeError("_author")
 
     @property
     def _footer(self):
         if self.footer:
-            return {"text": (self.footer.text or discord.Embed.Empty), "icon_url": (self.footer.icon_url or discord.Embed.Empty)}
+            return {"text": self.footer.text, "icon_url": self.footer.icon_url or None}
         else:
             raise AttributeError("_footer")
 
@@ -182,7 +182,7 @@ class SEmbed(discord.Embed):
         return self._raw_color
     
     @color.setter
-    def color_setter(self, val: Union[discord.Color, int]):
+    def color(self, val: Union[discord.Color, int]):
         self._raw_color = val
 
     @property
@@ -190,7 +190,7 @@ class SEmbed(discord.Embed):
         return self._raw_color or discord.Embed.Empty
 
     @_colour.setter
-    def _colour_setter(self, val):
+    def _colour(self, val):
         self._raw_color = val
 
     @property
