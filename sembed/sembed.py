@@ -145,7 +145,7 @@ class SEmbed(discord.Embed):
         return self._raw_footer
     
     @footer.setter
-    def footerNone(self, val: Optional[SFooter]):
+    def footer(self, val: Optional[SFooter]):
         self._raw_footer = val
 
     @property
@@ -154,6 +154,14 @@ class SEmbed(discord.Embed):
 
     @_fields.setter
     def _fields(self, val: List[SField]):
+        self._raw_fields = val
+
+    @property
+    def fields(self):
+        return self._raw_fields
+
+    @fields.setter
+    def fields(self, val: List[SField]):
         self._raw_fields = val
 
     @property
