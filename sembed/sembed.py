@@ -1,10 +1,24 @@
-from typing import List, Union
+from typing import List, Union, Optional
 import datetime
 
 import discord
 
 
 class SField(object):
+    """
+    Represents a Field.
+    Every attribute can be set during initialisation.
+    
+
+    Attributes
+    -----------
+    name : str
+        The name of the field.
+    value : str
+        The value of the field.
+    inline : str
+        Whether the field should be displayed inline.
+    """
     def __init__(self, name, value, inline=True):
         self.name = name
         self.value = value
@@ -12,6 +26,20 @@ class SField(object):
 
 
 class SAuthor(object):
+    """
+    Represents an Author.
+    Every attribute can be set during initialisation.
+    
+
+    Attributes
+    -----------
+    name : str
+        The name of the author.
+    icon_url : str
+        The icon URL of the author.
+    url : str
+        The URL of the author.
+    """
     def __init__(self, name: str, icon_url: str = None, url: str = None):
         self.name = name
         self.icon_url = icon_url
@@ -19,18 +47,60 @@ class SAuthor(object):
 
 
 class SFooter(object):
+    """
+    Represents a Footer.
+    Every attribute can be set during initialisation.
+    
+
+    Attributes
+    -----------
+    text : str
+        The text of the footer.
+    icon_url : str
+        The icon URL of the footer.
+    """
     def __init__(self, text: str, icon_url: str = None):
         self.text = text
         self.icon_url = icon_url
 
 
 class SEmbed(discord.Embed):
-    def __init__(self, title: str = "", description: str = "", *, color: Union[discord.Color, int] = None,
-                 url: str = "", fields: List[SField] = [], timestamp: datetime.datetime = None,
+    """
+    Represents a Discord embed.
+    Every attribute can be set during initialisation.
+
+    Attributes
+    -----------
+    title : str
+        The title of the embed.
+    description : str
+        The description of the embed.
+    url : str
+        The URL of the embed.
+    timestamp : datetime.datetime
+        The timestamp of the embed content. This could be a naive or aware datetime.
+    color : Union[discord.Color, int]
+        The color code of the embed.
+    image_url : str
+        The image URL of the embed.
+    thumbnail_url : str
+        The thumbnail URL of the embed.
+    fields : List[SEmbed]
+        Fields of the embed. Up to 10.
+    author : SAuthor
+        The author of the embed.
+    footer : SFooter
+        The footer of the embed.
+    
+    
+    """
+    
+    def __init__(self, title: str = "", description: str = "", *, url: str = "",
+                 timestamp: datetime.datetime = None, color: Union[discord.Color, int] = None,
                  image_url: str = None, thumbnail_url: str = None,
-                 author: SAuthor = None, footer: SFooter = None):
-        self.title = title
-        self.description = description
+                 fields: List[SField] = [], author: SAuthor = None, footer: SFooter = None):
+        self.title: str = title
+        self.description: str = description
         if color is None:
             self._raw_color = None
         elif isinstance(color, discord.Color):
@@ -39,8 +109,8 @@ class SEmbed(discord.Embed):
             self._raw_color = discord.Color(color)
         self._raw_fields = fields
         self._raw_timestamp = timestamp
-        self.image_url = image_url
-        self.thumbnail_url = thumbnail_url
+        self.image_url: str = image_url
+        self.thumbnail_url: str = thumbnail_url
         self._raw_author = author
         self._raw_footer = footer
         self._raw_url = url
@@ -51,7 +121,7 @@ class SEmbed(discord.Embed):
         return self._raw_timestamp
     
     @timestamp.setter
-    def timestamp_setter(self, val):
+    def timestamp_setter(self, val: datetime.datetime):
         self._raw_timestamp = val
     
     @property
@@ -59,7 +129,7 @@ class SEmbed(discord.Embed):
         return self._raw_url
     
     @url.setter
-    def url_setter(self, val):
+    def url_setter(self, val: Optional[str]):
         self._raw_url = val
 
     @property
@@ -67,7 +137,7 @@ class SEmbed(discord.Embed):
         return self._raw_author
     
     @author.setter
-    def author_setter(self, val):
+    def author_setter(self, val: Optional[SAuthor]):
         self._raw_author = val
 
     @property
@@ -75,7 +145,7 @@ class SEmbed(discord.Embed):
         return self._raw_footer
     
     @footer.setter
-    def footer_setter(self, val):
+    def footer_setter(self, val: Optional[SFooter]):
         self._raw_footer = val
 
     @property
@@ -83,7 +153,7 @@ class SEmbed(discord.Embed):
         return [{"name": rf.name, "value": rf.value, "inline": rf.inline} for rf in self._raw_fields]
 
     @_fields.setter
-    def _fields(self, val):
+    def _fields(self, val: List[SField]):
         self._raw_fields = val
 
     @property
@@ -112,7 +182,7 @@ class SEmbed(discord.Embed):
         return self._raw_color
     
     @color.setter
-    def color_setter(self, val):
+    def color_setter(self, val: Union[discord.Color, int]):
         self._raw_color = val
 
     @property

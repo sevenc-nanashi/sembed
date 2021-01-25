@@ -18,52 +18,76 @@ pip install sembed
   
 Basic Usage
 =====
-### Translate
+### Simple Embed
 ```python
-import asyncio
-from sembed 
+import discord
+import sembed
 
- 
-async def coro():
-    g = async_google_trans_new.google_translator()
-    print(await g.translate("こんにちは、世界！","en"))
-loop=asyncio.get_event_loop() 
-loop.run_until_complete(coro())
--> Hello world!
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content == "please test sembed":
+        e = sembed.SEmbed("Did you know that", "This embed is made by sembed!")
+        await message.channel.send(embed=e)
+
+client.run('your token here')
 ```
-***
 
-Advanced Usage
-=====
-### Translate 
-### Multi Translate
+![test_image1](https://imgur.com/XDDLv6I.png)
+
+### All-in-one Embed
 ```python
-import asyncio
-from async_google_trans_new import google_translator
+import discord
+import sembed
 
- 
-async def coro():
-    g = google_translator()
-    texts = ["こんにちは、世界！", "こんばんは、世界！", "おはよう、世界！"]
-    gathers = []
-    for text in texts:
-    	  gathers.append(g.translate(text, "en"))
-    
-    print(await asyncio.gather(*gathers))
+client = discord.Client()
 
-loop=asyncio.get_event_loop() 
-loop.run_until_complete(coro())
--> ['Hello World! ', 'Good evening, the world! ', 'Good morning, the world! '] 
+
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content == "please test sembed":
+        e = sembed.SEmbed(title="Title", description="Description", color=0x7289da,
+                          fields=[sembed.SField("name1", "value1 - inline", True),
+                                  sembed.SField("name2", "value2 - inline", True),
+                                  sembed.SField("name3", "value3 - not inline", False)],
+                          author=sembed.SAuthor("Author", "https://cdn.discordapp.com/avatars/686547120534454315/a_14261e094afcbfe4ab3abde42ac86987.gif", "https://discord.com"),
+                          footer=sembed.SFooter("Footer", "https://cdn.discordapp.com/embed/avatars/2.png"),
+                          url="https://github.com",
+                          image_url="https://cdn.discordapp.com/embed/avatars/3.png",
+                          thumbnail_url="https://cdn.discordapp.com/embed/avatars/0.png")
+
+        await message.channel.send(embed=e)
+
+client.run('your token here')
 ```
+
+![test_image2](https://imgur.com/3RRuRzr.png)
+
+
 ***
 
 Prerequisites
 ====
 * **Python 3.8 (Please make GitHub issue if you can use this lib on different python version)**  
-* **aiohttp**  
-* **urllib3**  
+* **[discord.py](https://github.com/Rapptz/discord.py)**   
 ***
   
 License
 ====
-Please see [LICENSE](https://github.com/sevenc-nanashi/async_google_trans_new/blob/main/LICENSE).
+Please see [LICENSE](https://github.com/sevenc-nanashi/sembed/blob/main/LICENSE).
