@@ -87,9 +87,9 @@ class SEmbed(discord.Embed):
         The thumbnail URL of the embed.
     fields : List[SEmbed]
         Fields of the embed. Up to 10.
-    author : SAuthor
+    author : Union[SAuthor, str]
         The author of the embed.
-    footer : SFooter
+    footer : Union[SFooter, str]
         The footer of the embed.
     
     
@@ -98,7 +98,7 @@ class SEmbed(discord.Embed):
     def __init__(self, title: str = "", description: str = "", *, url: str = "",
                  timestamp: datetime.datetime = None, color: Union[discord.Color, int] = None,
                  image_url: str = None, thumbnail_url: str = None,
-                 fields: List[SField] = [], author: SAuthor = None, footer: SFooter = None):
+                 fields: List[SField] = None, author: Union[SAuthor, str] = None, footer: Union[SFooter, str] = None):
         self.title: str = title
         self.description: str = description
         if color is None:
@@ -107,12 +107,12 @@ class SEmbed(discord.Embed):
             self._raw_color = color
         else:
             self._raw_color = discord.Color(color)
-        self._raw_fields = fields
+        self._raw_fields = fields or []
         self._raw_timestamp = timestamp
-        self.image_url: str = image_url
-        self.thumbnail_url: str = thumbnail_url
-        self._raw_author = author
-        self._raw_footer = footer
+        self.image_url = image_url
+        self.thumbnail_url = thumbnail_url
+        self.author = author
+        self.footer = footer
         self._raw_url = url
         self.type = "rich"
 
@@ -137,16 +137,22 @@ class SEmbed(discord.Embed):
         return self._raw_author
     
     @author.setter
-    def author(self, val: Optional[SAuthor]):
-        self._raw_author = val
+    def author(self, val: Union[SAuthor, str, None]):
+        if isinstance(val, str):
+            self._raw_author = SAuthor(name=val)
+        else:
+            self._raw_author = val
 
     @property
     def footer(self):
         return self._raw_footer
     
     @footer.setter
-    def footer(self, val: Optional[SFooter]):
-        self._raw_footer = val
+    def footer(self, val: Union[SFooter, str, None]):
+        if isinstance(val, str):
+            self._raw_footer = SFooter(text=val)
+        else:
+            self._raw_footer = val
 
     @property
     def _fields(self):
@@ -203,7 +209,7 @@ class SEmbed(discord.Embed):
 
     @property
     def _thumbnail(self):
-        if self.image_url:
+        if self.thumbnail_url:
             return {"url": self.thumbnail_url}
         else:
             raise AttributeError("_thumbnail")

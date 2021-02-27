@@ -10,13 +10,13 @@ def _requires_from_file(filename):
 
 setuptools.setup(
     name="sembed",
-    version="1.0.5",
+    version="1.1.0",
     author="sevenc_nanashi",
     description="A wrapper of discord.Embed.",
     long_description=long_desc,
     long_description_content_type='text/markdown',
     url="https://github.com/sevenc-nanashi/sembed",
-    packages=setuptools.find_packages(),
+    packages=['discord.ext.sembed', 'sembed'],
     install_requires=_requires_from_file('requirements.txt'),
     classifiers=[
         "Programming Language :: Python :: 3.8",
