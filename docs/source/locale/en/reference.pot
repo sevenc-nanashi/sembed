@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, sevenc-nanashi
+# This file is distributed under the same license as the SEmbed package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SEmbed \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-28 12:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/reference.rst:2
+msgid "SEmbed API Reference"
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:1
+msgid "Represents a Discord embed. Every attribute can be set during initialisation."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:6
+msgid "The title of the embed."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SFooter:0
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SFooter:0
+msgid "type"
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:8
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:14
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:20
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:38
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:44
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:9
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:15
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:21
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:9
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:15
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:21
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SFooter:9
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SFooter:15
+msgid "str"
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:12
+msgid "The description of the embed."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:18
+msgid "The URL of the embed."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:24
+msgid "The timestamp of the embed content. This could be a naive or aware datetime."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:26
+msgid "datetime.datetime"
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:30
+msgid "The color code of the embed."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:32
+msgid "Union[discord.Color, int]"
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:36
+msgid "The image URL of the embed."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:42
+msgid "The thumbnail URL of the embed."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:48
+msgid "Fields of the embed. Up to 10."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:50
+msgid "List[SEmbed]"
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:54
+msgid "The author of the embed."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:56
+msgid "Union[SAuthor, str]"
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:60
+msgid "The footer of the embed."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SEmbed:62
+msgid "Union[SFooter, str]"
+msgstr ""
+
+#: ../../source/reference.rst:7
+msgid "Field Class"
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:1
+msgid "Represents an Author. Every attribute can be set during initialisation."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:7
+msgid "The name of the author."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:13
+msgid "The icon URL of the author."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SAuthor:19
+msgid "The URL of the author."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:1
+msgid "Represents a Field. Every attribute can be set during initialisation."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:7
+msgid "The name of the field."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:13
+msgid "The value of the field."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SField:19
+msgid "Whether the field should be displayed inline."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SFooter:1
+msgid "Represents a Footer. Every attribute can be set during initialisation."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SFooter:7
+msgid "The text of the footer."
+msgstr ""
+
+#: c:/develop/python/lib/site-packages/sembed/sembed.py:docstring of sembed.sembed.SFooter:13
+msgid "The icon URL of the footer."
+msgstr ""

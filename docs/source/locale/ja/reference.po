@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, sevenc-nanashi
+# This file is distributed under the same license as the SEmbed package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SEmbed \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-28 12:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/reference.rst:2
+msgid "SEmbed API Reference"
+msgstr "SEmbed リファレンス"
+
+#: of sembed.sembed.SEmbed:1
+msgid ""
+"Represents a Discord embed. Every attribute can be set during "
+"initialisation."
+msgstr "Discordの埋め込みを表します。全ての属性は作成時に設定出来ます。"
+
+#: of sembed.sembed.SEmbed:6
+msgid "The title of the embed."
+msgstr "埋め込みのタイトルです。"
+
+#: of sembed.sembed.SAuthor sembed.sembed.SEmbed sembed.sembed.SField
+#: sembed.sembed.SFooter
+msgid "type"
+msgstr "タイプ"
+
+#: of sembed.sembed.SAuthor:9 sembed.sembed.SAuthor:15 sembed.sembed.SAuthor:21
+#: sembed.sembed.SEmbed:8 sembed.sembed.SEmbed:14 sembed.sembed.SEmbed:20
+#: sembed.sembed.SEmbed:38 sembed.sembed.SEmbed:44 sembed.sembed.SField:9
+#: sembed.sembed.SField:15 sembed.sembed.SField:21 sembed.sembed.SFooter:9
+#: sembed.sembed.SFooter:15
+msgid "str"
+msgstr "str"
+
+#: of sembed.sembed.SEmbed:12
+msgid "The description of the embed."
+msgstr "埋め込みの説明です。"
+
+#: of sembed.sembed.SEmbed:18
+msgid "The URL of the embed."
+msgstr "埋め込みのURLです。"
+
+#: of sembed.sembed.SEmbed:24
+msgid ""
+"The timestamp of the embed content. This could be a naive or aware "
+"datetime."
+msgstr "埋め込みの時間です。naiveでもawareでも大丈夫です。"
+
+#: of sembed.sembed.SEmbed:26
+msgid "datetime.datetime"
+msgstr "datetime.datetime"
+
+#: of sembed.sembed.SEmbed:30
+msgid "The color code of the embed."
+msgstr "埋め込みの色です。"
+
+#  #: of sembed.sembed.SEmbed:32
+#  msgid "Union[discord.Color, int]"
+#  msgstr ""
+
+#: of sembed.sembed.SEmbed:36
+msgid "The image URL of the embed."
+msgstr "埋め込みの画像のURLです。"
+
+#: of sembed.sembed.SEmbed:42
+msgid "The thumbnail URL of the embed."
+msgstr "埋め込みのサムネイルのURLです。"
+
+#: of sembed.sembed.SEmbed:48
+msgid "Fields of the embed. Up to 10."
+msgstr "埋め込みのフィールドです。10個までです。"
+
+#  #: of sembed.sembed.SEmbed:50
+#  msgid "List[SEmbed]"
+#  msgstr ""
+
+#: of sembed.sembed.SEmbed:54
+msgid "The author of the embed."
+msgstr "埋め込みの作者です。"
+
+#  #: of sembed.sembed.SEmbed:56
+#  msgid "Union[SAuthor, str]"
+#  msgstr ""
+
+#: of sembed.sembed.SEmbed:60
+msgid "The footer of the embed."
+msgstr "埋め込みのフッターです。"
+
+#  #: of sembed.sembed.SEmbed:62
+#  msgid "Union[SFooter, str]"
+#  msgstr ""
+
+#: ../../source/reference.rst:7
+msgid "Field Class"
+msgstr "フィールドのクラス"
+
+#: of sembed.sembed.SAuthor:1
+msgid "Represents an Author. Every attribute can be set during initialisation."
+msgstr "埋め込みの作者を表します。全ての属性は作成時に設定出来ます。"
+
+#: of sembed.sembed.SAuthor:7
+msgid "The name of the author."
+msgstr "作者の名前です。"
+
+#: of sembed.sembed.SAuthor:13
+msgid "The icon URL of the author."
+msgstr "作者のアイコンのURLです。"
+
+#: of sembed.sembed.SAuthor:19
+msgid "The URL of the author."
+msgstr "作者のURLです。"
+
+#: of sembed.sembed.SField:1
+msgid "Represents a Field. Every attribute can be set during initialisation."
+msgstr "埋め込みのフィールドを表します。全ての属性は作成時に設定出来ます。"
+
+#: of sembed.sembed.SField:7
+msgid "The name of the field."
+msgstr "フィールドの名前です。"
+
+#: of sembed.sembed.SField:13
+msgid "The value of the field."
+msgstr "フィールドの内容です。"
+
+#: of sembed.sembed.SField:19
+msgid "Whether the field should be displayed inline."
+msgstr "インラインを表示するかしないかです。"
+
+#: of sembed.sembed.SFooter:1
+msgid "Represents a Footer. Every attribute can be set during initialisation."
+msgstr "埋め込みのフッターです。全ての属性は作成時に設定出来ます。"
+
+#: of sembed.sembed.SFooter:7
+msgid "The text of the footer."
+msgstr "フッターのテキストです。"
+
+#: of sembed.sembed.SFooter:13
+msgid "The icon URL of the footer."
+msgstr "フッターのアイコンのURLです。"
+
