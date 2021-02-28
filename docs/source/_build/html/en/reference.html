@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>SEmbed API Reference &mdash; SEmbed  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SEmbed
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">SEmbed API Reference</a></li>
+<li><a class="reference internal" href="#field-class">Field Class</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SEmbed</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SEmbed API Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/reference.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sembed-api-reference">
+<h1>SEmbed API Reference<a class="headerlink" href="#sembed-api-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="sembed.SEmbed">
+<em class="property">class </em><code class="sig-prename descclassname">sembed.</code><code class="sig-name descname">SEmbed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">''</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">''</span></em>, <em class="sig-param"><span class="n">timestamp</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>discord.colour.Colour<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image_url</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thumbnail_url</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fields</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>sembed.sembed.SField<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">author</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>sembed.sembed.SAuthor<span class="p">, </span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">footer</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>sembed.sembed.SFooter<span class="p">, </span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sembed.SEmbed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a Discord embed.
+Every attribute can be set during initialisation.</p>
+<dl class="py attribute">
+<dt id="sembed.SEmbed.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#sembed.SEmbed.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the embed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#sembed.SEmbed.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>The description of the embed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.url">
+<code class="sig-name descname">url</code><a class="headerlink" href="#sembed.SEmbed.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The URL of the embed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.timestamp">
+<code class="sig-name descname">timestamp</code><a class="headerlink" href="#sembed.SEmbed.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>The timestamp of the embed content. This could be a naive or aware datetime.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.color">
+<code class="sig-name descname">color</code><a class="headerlink" href="#sembed.SEmbed.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color code of the embed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Union[discord.Color, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.image_url">
+<code class="sig-name descname">image_url</code><a class="headerlink" href="#sembed.SEmbed.image_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The image URL of the embed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.thumbnail_url">
+<code class="sig-name descname">thumbnail_url</code><a class="headerlink" href="#sembed.SEmbed.thumbnail_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The thumbnail URL of the embed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.fields">
+<code class="sig-name descname">fields</code><a class="headerlink" href="#sembed.SEmbed.fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fields of the embed. Up to 10.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#sembed.SEmbed" title="sembed.SEmbed">SEmbed</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.author">
+<code class="sig-name descname">author</code><a class="headerlink" href="#sembed.SEmbed.author" title="Permalink to this definition">¶</a></dt>
+<dd><p>The author of the embed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#sembed.SAuthor" title="sembed.SAuthor">SAuthor</a>, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SEmbed.footer">
+<code class="sig-name descname">footer</code><a class="headerlink" href="#sembed.SEmbed.footer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The footer of the embed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#sembed.SFooter" title="sembed.SFooter">SFooter</a>, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="field-class">
+<h1>Field Class<a class="headerlink" href="#field-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="sembed.SAuthor">
+<em class="property">class </em><code class="sig-prename descclassname">sembed.</code><code class="sig-name descname">SAuthor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">icon_url</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sembed.SAuthor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an Author.
+Every attribute can be set during initialisation.</p>
+<dl class="py attribute">
+<dt id="sembed.SAuthor.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#sembed.SAuthor.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the author.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SAuthor.icon_url">
+<code class="sig-name descname">icon_url</code><a class="headerlink" href="#sembed.SAuthor.icon_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The icon URL of the author.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SAuthor.url">
+<code class="sig-name descname">url</code><a class="headerlink" href="#sembed.SAuthor.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The URL of the author.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="sembed.SField">
+<em class="property">class </em><code class="sig-prename descclassname">sembed.</code><code class="sig-name descname">SField</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">inline</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sembed.SField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a Field.
+Every attribute can be set during initialisation.</p>
+<dl class="py attribute">
+<dt id="sembed.SField.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#sembed.SField.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SField.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#sembed.SField.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The value of the field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SField.inline">
+<code class="sig-name descname">inline</code><a class="headerlink" href="#sembed.SField.inline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the field should be displayed inline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="sembed.SFooter">
+<em class="property">class </em><code class="sig-prename descclassname">sembed.</code><code class="sig-name descname">SFooter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">icon_url</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sembed.SFooter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a Footer.
+Every attribute can be set during initialisation.</p>
+<dl class="py attribute">
+<dt id="sembed.SFooter.text">
+<code class="sig-name descname">text</code><a class="headerlink" href="#sembed.SFooter.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>The text of the footer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="sembed.SFooter.icon_url">
+<code class="sig-name descname">icon_url</code><a class="headerlink" href="#sembed.SFooter.icon_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The icon URL of the footer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, sevenc-nanashi.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
