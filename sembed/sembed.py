@@ -99,8 +99,8 @@ class SEmbed(discord.Embed):
                  timestamp: datetime.datetime = None, color: Union[discord.Color, int] = None,
                  image_url: str = None, thumbnail_url: str = None,
                  fields: List[SField] = None, author: Union[SAuthor, str] = None, footer: Union[SFooter, str] = None):
-        self.title: str = title
-        self.description: str = description
+        self.title = title
+        self.description = description
         if color is None:
             self._raw_color = None
         elif isinstance(color, discord.Color):
@@ -117,7 +117,7 @@ class SEmbed(discord.Embed):
         self.type = "rich"
 
     @property
-    def timestamp(self):
+    def timestamp(self) -> datetime.datetime:
         return self._raw_timestamp
     
     @timestamp.setter
@@ -125,7 +125,7 @@ class SEmbed(discord.Embed):
         self._raw_timestamp = val
     
     @property
-    def url(self):
+    def url(self) -> str:
         return self._raw_url
     
     @url.setter
@@ -133,7 +133,15 @@ class SEmbed(discord.Embed):
         self._raw_url = val
 
     @property
-    def author(self):
+    def author(self) -> SAuthor:
+        """
+        The author of the embed.
+
+        Returns
+        -------
+        SAuthor
+            The author of the embed.
+        """
         return self._raw_author
     
     @author.setter
@@ -144,7 +152,7 @@ class SEmbed(discord.Embed):
             self._raw_author = val
 
     @property
-    def footer(self):
+    def footer(self) -> SFooter:
         return self._raw_footer
     
     @footer.setter
@@ -163,7 +171,7 @@ class SEmbed(discord.Embed):
         self._raw_fields = val
 
     @property
-    def fields(self):
+    def fields(self) -> List[SField]:
         return self._raw_fields
 
     @fields.setter
@@ -192,7 +200,7 @@ class SEmbed(discord.Embed):
             raise AttributeError("_footer")
         
     @property
-    def color(self):
+    def color(self) -> List[discord.Color]:
         return self._raw_color
     
     @color.setter

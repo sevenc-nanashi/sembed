@@ -79,7 +79,38 @@ client.run('your token here')
 
 ![test_image2](https://imgur.com/3RRuRzr.png)
 
+### Edit
+```python
+import discord
+import sembed
 
+client = discord.Client()
+
+
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content == "please test sembed":
+        e = sembed.SEmbed(title="Title", description="Description")
+        await message.channel.send(embed=e)
+        e.author = sembed.SAuthor("You can use SAuthor.")
+        e.footer = "And you can set str."
+        e.fields.append(sembed.SField("But...", "You must set SField to fields :("))
+        await message.channel.send(embed=e)
+        e.fields[0].value = "(Edited)"
+        await message.channel.send(embed=e)
+
+client.run('your token here')
+```
+
+![test_image3](https://imgur.com/Pa0uhpz.png)
 ***
 
 Prerequisites
