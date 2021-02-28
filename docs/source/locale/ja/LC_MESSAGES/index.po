@@ -36,11 +36,11 @@ msgstr ""
 msgid "Indices and tables"
 msgstr "ページリスト"
 
-#: ../../source/index.rst:19
-msgid ":doc:`example`"
-msgstr "例"
+#  #: ../../source/index.rst:19
+#  msgid ":doc:`example`"
+#  msgstr "例"
 
-#: ../../source/index.rst:20
-msgid ":doc:`reference`"
-msgstr "リファレンス"
+#  #: ../../source/index.rst:20
+#  msgid ":doc:`reference`"
+#  msgstr "リファレンス"
 

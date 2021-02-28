@@ -18,8 +18,8 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: ../../source/reference.rst:2
-msgid "SEmbed API Reference"
-msgstr "SEmbed リファレンス"
+msgid "API Reference"
+msgstr "APIリファレンス"
 
 #: of sembed.sembed.SEmbed:1
 msgid ""
