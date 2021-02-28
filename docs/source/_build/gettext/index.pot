@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, sevenc-nanashi
+# This file is distributed under the same license as the SEmbed package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SEmbed \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-28 12:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../index.rst:7
+msgid "Welcome to SEmbed's documentation!"
+msgstr ""
+
+#: ../../index.rst:9
+msgid "Welcome to SEmbed! This lib helps you to use Embed."
+msgstr ""
+
+#: ../../index.rst:12
+msgid "You can read reference in :doc:`reference`, and :doc:`example` has some examples."
+msgstr ""
+
+#: ../../index.rst:17
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../index.rst:19
+msgid ":doc:`example`"
+msgstr ""
+
+#: ../../index.rst:20
+msgid ":doc:`reference`"
+msgstr ""
