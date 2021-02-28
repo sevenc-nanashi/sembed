@@ -1,6 +1,7 @@
 # sembed
 [![PyPi](https://img.shields.io/pypi/v/sembed.svg)](https://pypi.org/project/sembed/)
 [![PyPI - Downloads](https://static.pepy.tech/badge/sembed)](https://pypi.org/project/sembed/)  
+[![readthedocs](https://readthedocs.org/projects/sembed/badge/?version=latest)](https://sembed.readthedocs.io)
 This is a wrapper of discord.Embed of [discord.py](https://github.com/Rapptz/discord.py).  
   
 ***

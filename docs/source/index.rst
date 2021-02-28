@@ -16,7 +16,5 @@ and :doc:`example` has some examples.
 Indices and tables
 ==================
 
-* :ref:`genindex`
 * :doc:`example`
 * :doc:`reference`
-* :ref:`search`
