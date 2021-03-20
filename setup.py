@@ -17,6 +17,9 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url="https://github.com/sevenc-nanashi/sembed",
     packages=['discord.ext.sembed', 'sembed'],
+    project_urls={
+        "Bug Tracker": "https://github.com/sevenc-nanashi/sembed/issues",
+    },
     install_requires=_requires_from_file('requirements.txt'),
     classifiers=[
         "Programming Language :: Python :: 3.8",
