@@ -1,4 +1,5 @@
 import setuptools
+from . import sembed
 
 with open("README.md", "r", encoding='utf-8') as f:
     long_desc = f.read()
@@ -10,7 +11,7 @@ def _requires_from_file(filename):
 
 setuptools.setup(
     name="sembed",
-    version="1.1.0",
+    version=sembed.__version__,
     author="sevenc_nanashi",
     description="A wrapper of discord.Embed.",
     long_description=long_desc,
