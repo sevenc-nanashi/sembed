@@ -20,10 +20,12 @@ setuptools.setup(
     packages=['discord.ext.sembed', 'sembed'],
     project_urls={
         "Bug Tracker": "https://github.com/sevenc-nanashi/sembed/issues",
+        "Documentation": "https://sembed.readthedocs.io",
     },
     install_requires=_requires_from_file('requirements.txt'),
     classifiers=[
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ]
