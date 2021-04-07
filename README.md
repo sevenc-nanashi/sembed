@@ -1,5 +1,5 @@
 # sembed
-[![PyPi](https://img.shields.io/pypi/v/sembed.svg)](https://pypi.org/project/sembed/) [![PyPI - Downloads](https://static.pepy.tech/badge/sembed)](https://pypi.org/project/sembed/) [![readthedocs](https://readthedocs.org/projects/sembed/badge/?version=latest)](https://sembed.readthedocs.io)  
+[![PyPi](https://img.shields.io/pypi/v/sembed.svg?style=flat-square)](https://pypi.org/project/sembed/) [![PyPI - Downloads](https://img.shields.io/badge/dynamic/json?style=flat-square&label=downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi.pepy.tech%2Fapi%2Fprojects%2Fsembed)](https://pypi.org/project/sembed/) [![readthedocs](https://readthedocs.org/projects/sembed/badge/?version=latest&style=flat-square)](https://sembed.readthedocs.io)  
 This is a wrapper of discord.Embed of [discord.py](https://github.com/Rapptz/discord.py).  
   
 ***
