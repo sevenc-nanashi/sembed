@@ -124,3 +124,8 @@ Prerequisites
 License
 ====
 Please see [LICENSE](https://github.com/sevenc-nanashi/sembed/blob/main/LICENSE).
+
+Contributing
+============
+Contributing is welcome!
+https://github.com/sevenc-nanashi/sembed/pulls
