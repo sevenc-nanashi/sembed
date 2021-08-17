@@ -1,4 +1,5 @@
 from typing import List, Union, Optional
+from dataclasses import dataclass
 import datetime
 
 import discord
@@ -6,11 +7,11 @@ import discord
 __version__ = '1.1.1'
 
 
-class SField(object):
+@dataclass
+class SField:
     """
     Represents a Field.
     Every attribute can be set during initialisation.
-
 
     Attributes
     -----------
@@ -18,17 +19,16 @@ class SField(object):
         The name of the field.
     value : str
         The value of the field.
-    inline : str
+    inline : bool
         Whether the field should be displayed inline.
     """
-
-    def __init__(self, name, value, inline=True):
-        self.name = name
-        self.value = value
-        self.inline = inline
+    name: str
+    value: str
+    inline: bool = True
 
 
-class SAuthor(object):
+@dataclass
+class SAuthor:
     """
     Represents an Author.
     Every attribute can be set during initialisation.
@@ -43,14 +43,13 @@ class SAuthor(object):
     url : str
         The URL of the author.
     """
-
-    def __init__(self, name: str, icon_url: str = None, url: str = None):
-        self.name = name
-        self.icon_url = icon_url
-        self.url = url
+    name: str
+    icon_url: str = None
+    url: str = None
 
 
-class SFooter(object):
+@dataclass
+class SFooter:
     """
     Represents a Footer.
     Every attribute can be set during initialisation.
@@ -63,10 +62,8 @@ class SFooter(object):
     icon_url : str
         The icon URL of the footer.
     """
-
-    def __init__(self, text: str, icon_url: str = None):
-        self.text = text
-        self.icon_url = icon_url
+    text: str
+    icon_url: str
 
 
 class SEmbed(discord.Embed):
@@ -83,7 +80,8 @@ class SEmbed(discord.Embed):
     url : str
         The URL of the embed.
     timestamp : datetime.datetime
-        The timestamp of the embed content. This could be a naive or aware datetime.
+        The timestamp of the embed content.
+        This could be a naive or aware datetime.
     color : Union[discord.Color, int]
         The color code of the embed.
     image_url : str
@@ -96,22 +94,35 @@ class SEmbed(discord.Embed):
         The author of the embed.
     footer : Union[SFooter, str]
         The footer of the embed.
-
-
     """
 
-    def __init__(self, title: str = "", description: str = "", *, url: str = "",
-                 timestamp: datetime.datetime = None, color: Union[discord.Color, int] = None,
-                 image_url: str = None, thumbnail_url: str = None,
-                 fields: List[SField] = None, author: Union[SAuthor, str] = None, footer: Union[SFooter, str] = None):
+    def __init__(
+        self,
+        title: str = "",
+        description: str = "",
+        *,
+        url: str = "",
+        timestamp: datetime.datetime = None,
+        color: Union[discord.Color, int] = None,
+        image_url: str = None,
+        thumbnail_url: str = None,
+        fields: List[SField] = None,
+        author: Union[SAuthor, str] = None,
+        footer: Union[SFooter, str] = None,
+        **kwargs
+    ):
+
+        super().__init__(**kwargs)
         self.title = title
         self.description = description
+
         if color is None:
             self._raw_color = None
         elif isinstance(color, discord.Color):
             self._raw_color = color
         else:
             self._raw_color = discord.Color(color)
+
         self._raw_fields = fields or []
         self._raw_timestamp = timestamp
         self.image_url = image_url
@@ -151,10 +162,7 @@ class SEmbed(discord.Embed):
 
     @author.setter
     def author(self, val: Union[SAuthor, str, None]):
-        if isinstance(val, str):
-            self._raw_author = SAuthor(name=val)
-        else:
-            self._raw_author = val
+        self._raw_author = SAuthor(name=val) if isinstance(val, str) else val
 
     @property
     def footer(self) -> SFooter:
@@ -162,14 +170,14 @@ class SEmbed(discord.Embed):
 
     @footer.setter
     def footer(self, val: Union[SFooter, str, None]):
-        if isinstance(val, str):
-            self._raw_footer = SFooter(text=val)
-        else:
-            self._raw_footer = val
+        self._raw_footer = SFooter(text=val) if isinstance(val, str) else val
 
     @property
     def _fields(self):
-        return [{"name": rf.name, "value": rf.value, "inline": rf.inline} for rf in self._raw_fields]
+        return [
+            {"name": rf.name, "value": rf.value, "inline": rf.inline}
+            for rf in self._raw_fields
+        ]
 
     @_fields.setter
     def _fields(self, val: List[SField]):
@@ -185,27 +193,34 @@ class SEmbed(discord.Embed):
 
     @property
     def _author(self):
-        if self.author:
-            return {"name": self.author.name, "icon_url": self.author.icon_url or None, "url": self.author.url or None}
-        else:
+        if not self.author:
             raise AttributeError("_author")
+
+        return {
+            "name": self.author.name,
+            "icon_url": self.author.icon_url or None,
+            "url": self.author.url or None
+        }
 
     @property
     def _footer(self):
-        if self.footer:
-            return {"text": self.footer.text, "icon_url": self.footer.icon_url or None}
-        else:
+        if not self.footer:
             raise AttributeError("_footer")
+
+        return {
+            "text": self.footer.text,
+            "icon_url": self.footer.icon_url or None
+        }
 
     @property
     def _timestamp(self):
-        if self.timestamp:
-            return self.timestamp
-        else:
+        if not self.timestamp:
             raise AttributeError("_timestamp")
 
+        return self.timestamp
+
     @property
-    def color(self) -> List[discord.Color]:
+    def color(self) -> discord.Color:
         return self._raw_color
 
     @color.setter
@@ -222,14 +237,15 @@ class SEmbed(discord.Embed):
 
     @property
     def _thumbnail(self):
-        if self.thumbnail_url:
-            return {"url": self.thumbnail_url}
-        else:
+        if not self.thumbnail_url:
             raise AttributeError("_thumbnail")
+
+        return {"url": self.thumbnail_url}
 
     @property
     def _image(self):
-        if self.image_url:
-            return {"url": self.image_url}
-        else:
+        if not self.image_url:
             raise AttributeError("_image")
+
+        return {"url": self.image_url}
+
