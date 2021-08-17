@@ -1,4 +1,5 @@
 from typing import List, Union, Optional
+from dataclasses import dataclass
 import datetime
 
 import discord
@@ -6,11 +7,11 @@ import discord
 __version__ = '1.1.1'
 
 
-class SField(object):
+@dataclass
+class SField:
     """
     Represents a Field.
     Every attribute can be set during initialisation.
-
 
     Attributes
     -----------
@@ -18,17 +19,16 @@ class SField(object):
         The name of the field.
     value : str
         The value of the field.
-    inline : str
+    inline : bool
         Whether the field should be displayed inline.
     """
-
-    def __init__(self, name, value, inline=True):
-        self.name = name
-        self.value = value
-        self.inline = inline
+    name: str
+    value: str
+    inline: bool = True
 
 
-class SAuthor(object):
+@dataclass
+class SAuthor:
     """
     Represents an Author.
     Every attribute can be set during initialisation.
@@ -43,14 +43,13 @@ class SAuthor(object):
     url : str
         The URL of the author.
     """
-
-    def __init__(self, name: str, icon_url: str = None, url: str = None):
-        self.name = name
-        self.icon_url = icon_url
-        self.url = url
+    name: str
+    icon_url: str = None
+    url: str = None
 
 
-class SFooter(object):
+@dataclass
+class SFooter:
     """
     Represents a Footer.
     Every attribute can be set during initialisation.
@@ -63,10 +62,8 @@ class SFooter(object):
     icon_url : str
         The icon URL of the footer.
     """
-
-    def __init__(self, text: str, icon_url: str = None):
-        self.text = text
-        self.icon_url = icon_url
+    text: str
+    icon_url: str
 
 
 class SEmbed(discord.Embed):
@@ -96,8 +93,6 @@ class SEmbed(discord.Embed):
         The author of the embed.
     footer : Union[SFooter, str]
         The footer of the embed.
-
-
     """
 
     def __init__(self, title: str = "", description: str = "", *, url: str = "",
@@ -106,12 +101,14 @@ class SEmbed(discord.Embed):
                  fields: List[SField] = None, author: Union[SAuthor, str] = None, footer: Union[SFooter, str] = None):
         self.title = title
         self.description = description
+
         if color is None:
             self._raw_color = None
         elif isinstance(color, discord.Color):
             self._raw_color = color
         else:
             self._raw_color = discord.Color(color)
+
         self._raw_fields = fields or []
         self._raw_timestamp = timestamp
         self.image_url = image_url
