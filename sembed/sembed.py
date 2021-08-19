@@ -4,8 +4,6 @@ import datetime
 
 import discord
 
-__version__ = '1.1.1'
-
 
 @dataclass
 class SField:
